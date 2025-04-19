@@ -6,6 +6,8 @@ register = template.Library()
 
 @register.filter
 def with_avatars_prefix(value):
+    if not value:
+        return ''
     return f'/media/avatars/{value}'
 
 
